@@ -1,3 +1,6 @@
+## Open zip file
+unzip('exdata-data-household_power_consumption.zip')
+
 ## Read data from file and subset into desired date range; reformat timestamp.
 alldata <- read.table('household_power_consumption.txt', sep = ';', header = TRUE)
 dataset <- alldata[which(alldata$Date == '1/2/2007' | alldata$Date == '2/2/2007'),]
