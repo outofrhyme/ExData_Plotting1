@@ -21,9 +21,11 @@ dataset$Sub_metering_2 <- as.numeric.factor(dataset$Sub_metering_2)
 
 ## Create Plot 3 Line Chart with multiple lines
 png(filename = 'plot3.png', width = 480, height = 480)
-with(dataset, plot(Timestamp, Sub_metering_1, type='l', ylab = 'Energy sub metering'))
-with(dataset, lines(Timestamp, Sub_metering_2, type='l', col = 'red'))
-with(dataset, lines(Timestamp, Sub_metering_3, type='l', col = 'blue'))
+with(dataset, {
+        plot(Timestamp, Sub_metering_1, type='l', ylab = 'Energy sub metering', xlab = '')
+        lines(Timestamp, Sub_metering_2, type='l', col = 'red')
+        lines(Timestamp, Sub_metering_3, type='l', col = 'blue')
+})
 legend('topright', lwd = '1', col = c('black', 'red', 'blue'), 
        legend = c('Sub_metering_1', 'Sub_metering_2', 'Sub_metering_3'))
 dev.off()
